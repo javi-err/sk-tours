@@ -29,8 +29,10 @@ body {
 .header {
     height: 95vh;
     background-image: 
-        linear-gradient(to right bottom, #5891d6c2, #002e665e), 
+        linear-gradient(145deg, rgba(205,46,58,0.6) 36%, rgba(0,71,160,0.6) 76%), 
         url(/imgs/sk-city.png);    /* Photo by Sunyu Kim */
+        
+         
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -48,6 +50,9 @@ body {
     height: 50px;
     filter: invert();
     margin-top: -15px;
+    animation-name: fadeIn;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
 }
 
 .primary-heading {
@@ -65,10 +70,36 @@ body {
     font-weight: 400;
     letter-spacing: 15px;
     text-align: center;
-    opacity: 0.9
+    opacity: 0.95;
+    animation-name: leftIn;
+    animation-duration: 750ms;
+    animation-timing-function: ease-out;
 }
 
 .secondary-heading {
     font-size: 20px;
     white-space: nowrap;
+}
+
+/* Animations */
+@keyframes leftIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px)
+    }
+
+    100% {
+        opacity: .95;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
